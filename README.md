@@ -1,45 +1,40 @@
 # vscode-plugin-fr-schema
 
-## 截图
-
-![screenshot](https://img.alicdn.com/tfs/TB1b53cmGNj0u4jSZFyXXXgMVXa-2740-1748.gif)
-
 ## 安装
 
-插件商店搜索 `FormRender` 或访问[此链接](https://marketplace.visualstudio.com/items?itemName=F-loat.vscode-plugin-fr-schema)即可安装
+插件商店搜索 `FormRender` 或访问 [vscode 网上商店](https://marketplace.visualstudio.com/items?itemName=F-loat.vscode-plugin-fr-schema) 进行安装
 
-## 功能
+## 使用
 
-> 可通过 examples 目录下的文件进行测试
+1. 打开任何`.json`文件，右上角出现进入编辑模式的 icon，表明已安装成功。点击此按钮可进入可视化编辑
+   ![插件按钮](https://img.alicdn.com/tfs/TB165c0V4z1gK0jSZSgXXavwpXa-849-465.png)
 
-* 可视化编辑表单配置
-  
-  - 右键任意 `json` 文件，选择 `可视化编辑表单配置`
-  - 点击任意 JSON 文件右上角工具栏图标快速切换编辑模式
+2. 在表单设计器里完成编辑点击 “保存”。全流程如下
+   ![screenshot](https://img.alicdn.com/tfs/TB1b53cmGNj0u4jSZFyXXXgMVXa-2740-1748.gif)
 
-* 转换表单数据为表单配置
+## 更多说明
 
-  右键任意 `json` 文件，选择 `转换数据为表单配置`
+- 唤起表单设计器有两种方式：
 
-* 解析 React PropTypes 为表单配置
+  1. 点击右上角的 icon (推荐)
+  2. 右键 `.json` 文件，选择 `可视化编辑表单配置` 或 `open with formRender schema editor`（英文编辑器）
 
-  右键任意 `jsx` 文件，选择 `解析组件为表单配置`，具体说明可查看 [proptypes-to-json-schema](https://github.com/form-render/proptypes-to-json-schema) 相关文档
+- 本插件还支持将 React PropTypes 解析为 schema 文件。右键任意 `.jsx` 文件，选择 `解析组件为表单配置`，具体配置方式可查看 [proptypes-to-json-schema](https://github.com/form-render/proptypes-to-json-schema) 文档
 
-## 开发
+## 参与插件开发
 
-* 克隆项目
+- 克隆项目
 
-``` sh
+```sh
 git clone https://github.com/F-loat/vscode-plugin-fr-schema.git
 ```
 
-* 安装依赖
+- 安装依赖
 
-``` sh
+```sh
 npm install
 ```
 
-* 调试插件
+- 调试插件
 
 使用 VSCode 打开项目，执行 `yarn dev`，然后按下 F5 开始调试
-
