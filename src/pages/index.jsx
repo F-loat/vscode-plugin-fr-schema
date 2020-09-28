@@ -12,10 +12,15 @@ const App = () => {
 
   vson('update', (body) => {
     try {
-      const obj = JSON.parse(body);
-
-      if (obj && obj.schema && obj.schema.properties) {
+      const obj = JSON.parse(body) || {};
+      if (obj.schema || obj.propsSchema) {
         generator.current.setValue(obj);
+      } else {
+        generator.current.setValue({
+          schema: {
+            type: 'object'
+          }
+        });
       }
     } catch (err) {
       console.log(err);

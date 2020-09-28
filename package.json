@@ -117,7 +117,7 @@
     "vscode:prepublish": "npm run lint && npm run compile && npm run build"
   },
   "dependencies": {
-    "fr-generator": "^0.5.5",
+    "fr-generator": "^1.0.0-beta.1",
     "proptypes-to-json-schema": "^0.1.1",
     "react": "^16.8.6",
     "react-docgen": "^5.3.0",
