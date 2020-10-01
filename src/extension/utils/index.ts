@@ -26,15 +26,14 @@ const getModelFromSchema: (schema: Schema) => any = ({
         ...result,
         [key]: getModelFromSchema(properties[key])
       }
-    }, {})
+    }, {});
   }
 
   if (type === 'array') {
-    return [getModelFromSchema({
-      type: 'object',
-      properties: items,
-      items: null
-    })]
+    if (items.type === 'object' && !Object.keys(items.properties).length) {
+      return [];
+    }
+    return [getModelFromSchema(items)];
   }
 
   return defaultValue[type];
