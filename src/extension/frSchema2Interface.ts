@@ -27,8 +27,9 @@ export class frSchema2InterfaceProvider {
     try {
       const document = await vscode.workspace.openTextDocument(uri);
       const formSchema = JSON.parse(document.getText());
-      const formModel = getModelFromSchema(formSchema.schema || formSchema.propsSchema);
-      const formInterface = json2interface.convert(formModel);
+      const schema = formSchema.schema || formSchema.propsSchema;
+      const formModel = getModelFromSchema(schema);
+      const formInterface = json2interface.convert(formModel, schema);
       vscode.env.clipboard.writeText(formInterface);
       vscode.window.setStatusBarMessage('类型定义已复制至剪贴板！', 3000);
     } catch (err) {

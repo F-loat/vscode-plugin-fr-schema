@@ -6,16 +6,14 @@
 
 import * as _ from 'lodash-es';
 
-class Json2Interface {
-  convert(jsonContent: any): string {
-    if (_.isArray(jsonContent)) {
-      return this.convertObjectToTsInterfaces(jsonContent[0]);
-    }
 
-    return this.convertObjectToTsInterfaces(jsonContent);
+// TODO: convert schema to interface directly
+class Json2Interface {
+  convert(jsonContent: any, schema?: any): string {
+    return this.convertObjectToTsInterfaces(jsonContent, 'FormData', schema);
   }
 
-  private convertObjectToTsInterfaces(jsonContent: any, objectName: string = 'FormData'): string {
+  private convertObjectToTsInterfaces(jsonContent: any, objectName: string = 'FormData', schema?: any): string {
     let optionalKeys: string[] = [];
     let objectResult: string[] = [];
 
@@ -24,7 +22,7 @@ class Json2Interface {
 
       if (_.isObject(value) && !_.isArray(value)) {
         let childObjectName = this.toUpperFirstLetter(key);
-        objectResult.push(this.convertObjectToTsInterfaces(value, childObjectName));
+        objectResult.push(this.convertObjectToTsInterfaces(value, childObjectName, schema?.properties?.[key]));
         jsonContent[key] = this.removeMajority(childObjectName) + ';';
       } else if (_.isArray(value)) {
         let arrayTypes: any = this.detectMultiArrayTypes(value);
@@ -39,7 +37,7 @@ class Json2Interface {
           }
         } else if (value.length > 0 && _.isObject(value[0])) {
           let childObjectName = this.toUpperFirstLetter(key);
-          objectResult.push(this.convertObjectToTsInterfaces(value[0], childObjectName));
+          objectResult.push(this.convertObjectToTsInterfaces(value[0], childObjectName, schema?.properties?.[key]?.items));
           jsonContent[key] = this.removeMajority(childObjectName) + '[];';
         } else {
           jsonContent[key] = arrayTypes[0];
@@ -56,6 +54,10 @@ class Json2Interface {
       } else {
         jsonContent[key] = 'any;';
         optionalKeys.push(key);
+      }
+
+      if (schema?.properties?.[key]?.title) {
+        jsonContent[key] += ` // ${schema.properties[key].title}`
       }
     }
 
@@ -125,6 +127,8 @@ class Json2Interface {
       let key = allKeys[index];
       // keys of formData always optional
       result = result.replace(new RegExp(key + ':', 'g'), this.toLowerFirstLetter(key) + '?:');
+      // optimize comments format for code prompt
+      result = result.replace(new RegExp('(.*) \/\/ (.*)'), (match, $1, $2) => `  /** ${$2} */\n${$1}`);
       // if (_.includes(optionalKeys, key)) {
       //   result = result.replace(new RegExp(key + ':', 'g'), this.toLowerFirstLetter(key) + '?:');
       // } else {
