@@ -8,7 +8,7 @@
 
 1. 打开任意 `.json` 文件，右上角出现进入编辑模式的 icon，表明已安装成功。点击此按钮可进入可视化编辑
 
-   ![editor-button](https://img.alicdn.com/tfs/TB165c0V4z1gK0jSZSgXXavwpXa-849-465.png)
+   ![editor-button](https://img.alicdn.com/tfs/TB1RfZGjAcx_u4jSZFlXXXnUFXa-1919-1284.png)
 
 2. 在表单设计器里完成编辑点击 “保存”。全流程如下
 
@@ -22,6 +22,8 @@
   2. 右键 `.json` 文件，选择 `可视化编辑表单配置` 或 `open with formRender schema editor`（英文编辑器）
 
 - 将 React PropTypes 解析为 schema 文件。右键任意 `.jsx` 文件，选择 `解析组件为表单配置`，具体配置方式可查看 [proptypes-to-json-schema](https://github.com/form-render/proptypes-to-json-schema) 文档
+
+   ![proptypes](https://img.alicdn.com/tfs/TB1Mt4Cicieb18jSZFvXXaI3FXa-2736-1744.png)
 
 - 将 schema 文件解析为 ts 类型定义。右键任意 `.json` 文件，选择 `解析表单配置为接口`
 
