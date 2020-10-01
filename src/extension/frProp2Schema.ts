@@ -1,3 +1,7 @@
+/**
+ * proptypes to schema
+ */
+
 import * as vscode from 'vscode';
 import * as docgen from 'react-docgen';
 import * as toSchema from 'proptypes-to-json-schema/src/to-Schema';

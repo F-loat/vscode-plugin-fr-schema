@@ -1,3 +1,7 @@
+/**
+ * toggle schema editor
+ */
+
 import * as vscode from 'vscode';
 
 export class frSchemaEditProvider {

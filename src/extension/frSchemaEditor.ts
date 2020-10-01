@@ -1,3 +1,7 @@
+/**
+ * schema editor
+ */
+
 import * as vscode from 'vscode';
 
 export class frSchemaEditorProvider implements vscode.CustomTextEditorProvider {

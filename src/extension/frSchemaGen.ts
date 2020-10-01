@@ -1,3 +1,7 @@
+/**
+ * data to schema
+ */
+
 import * as vscode from 'vscode';
 
 export class frSchemaGenProvider {
