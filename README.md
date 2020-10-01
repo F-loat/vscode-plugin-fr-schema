@@ -1,5 +1,7 @@
 # vscode-plugin-fr-schema
 
+> vscode plugin for [form-render](https://github.com/alibaba/form-render)
+
 ## 安装
 
 插件商店搜索 `FormRender` 或访问 [vscode 网上商店](https://marketplace.visualstudio.com/items?itemName=F-loat.vscode-plugin-fr-schema) 进行安装
@@ -21,13 +23,33 @@
   1. 点击右上角的 icon (推荐)
   2. 右键 `.json` 文件，选择 `可视化编辑表单配置` 或 `open with formRender schema editor`（英文编辑器）
 
-- 将 React PropTypes 解析为 schema 文件。右键任意 `.jsx` 文件，选择 `解析组件为表单配置`，具体配置方式可查看 [proptypes-to-json-schema](https://github.com/form-render/proptypes-to-json-schema) 文档
+- 将 React PropTypes 解析为 schema。右键任意 `.jsx` 文件，选择 `解析组件为表单配置`，具体配置方式可查看 [proptypes-to-json-schema](https://github.com/form-render/proptypes-to-json-schema) 文档
 
    ![proptypes](https://img.alicdn.com/tfs/TB1Mt4Cicieb18jSZFvXXaI3FXa-2736-1744.png)
 
 - 将 schema 文件解析为 ts 类型定义。右键任意 `.json` 文件，选择 `解析表单配置为接口`
 
    ![interface](https://img.alicdn.com/tfs/TB1nI.NWrY1gK0jSZTEXXXDQVXa-2736-1744.png)
+
+- 将表单数据转换为 schema。右键任意 `.json` 文件，选择 `转换数据为表单配置`
+
+## 相关名词
+
+- FormRender
+  
+  易用的跨组件体系的表单渲染引擎 - 通过 JSON Schema 快速生成自定义表单配置界面
+
+- JSON Schema / schema
+
+  json 标准，特指用于 FormRender 的表单配置
+
+- 接口
+
+  用于 typescript 的类型定义
+
+- 表单数据
+
+  开发目标，表单的最终产出
 
 ## 参与插件开发
 
