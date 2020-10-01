@@ -25,7 +25,7 @@
 
 - 将 schema 文件解析为 ts 类型定义。右键任意 `.jsx` 文件，选择 `解析表单配置为接口`
 
-   ![interface](https://img.alicdn.com/tfs/TB1XPIBlRFR4u4jSZFPXXanzFXa-2736-1744.png)
+   ![interface](https://img.alicdn.com/tfs/TB1nI.NWrY1gK0jSZTEXXXDQVXa-2736-1744.png)
 
 ## 参与插件开发
 
