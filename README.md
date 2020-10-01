@@ -6,7 +6,7 @@
 
 ## 使用
 
-1. 打开任何`.json`文件，右上角出现进入编辑模式的 icon，表明已安装成功。点击此按钮可进入可视化编辑
+1. 打开任意 `.json` 文件，右上角出现进入编辑模式的 icon，表明已安装成功。点击此按钮可进入可视化编辑
 
    ![editor-button](https://img.alicdn.com/tfs/TB165c0V4z1gK0jSZSgXXavwpXa-849-465.png)
 
@@ -23,7 +23,7 @@
 
 - 将 React PropTypes 解析为 schema 文件。右键任意 `.jsx` 文件，选择 `解析组件为表单配置`，具体配置方式可查看 [proptypes-to-json-schema](https://github.com/form-render/proptypes-to-json-schema) 文档
 
-- 将 schema 文件解析为 ts 类型定义。右键任意 `.jsx` 文件，选择 `解析表单配置为接口`
+- 将 schema 文件解析为 ts 类型定义。右键任意 `.json` 文件，选择 `解析表单配置为接口`
 
    ![interface](https://img.alicdn.com/tfs/TB1nI.NWrY1gK0jSZTEXXXDQVXa-2736-1744.png)
 
