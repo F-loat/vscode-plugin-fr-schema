@@ -124,12 +124,12 @@
     ]
   },
   "scripts": {
-    "dev": "umi dev",
-    "build": "umi build",
-    "compile": "webpack --mode production",
-    "watch": "webpack --mode development --watch",
+    "dev:web": "umi dev",
+    "dev:extension": "webpack --mode development",
+    "build:web": "umi build",
+    "build:extension": "webpack --mode production",
     "lint": "eslint . --ext .jsx,.ts,.tsx --fix",
-    "vscode:prepublish": "npm run lint && npm run compile && npm run build"
+    "vscode:prepublish": "npm run lint && npm run build:web && npm run build:extension"
   },
   "dependencies": {
     "fr-generator": "^1.0.0-beta.1",
