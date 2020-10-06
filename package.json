@@ -13,6 +13,7 @@
   "activationEvents": [
     "onCommand:frSchema.p2s",
     "onCommand:frSchema.s2i",
+    "onCommand:frSchema.c2i",
     "onCommand:frSchema.gen",
     "onCommand:frSchema.edit",
     "onCustomEditor:frSchema.editor"
@@ -36,6 +37,10 @@
       {
         "command": "frSchema.s2i",
         "title": "%frSchema.s2i.title%"
+      },
+      {
+        "command": "frSchema.c2i",
+        "title": "%frSchema.c2i.title%"
       },
       {
         "command": "frSchema.edit",
@@ -73,6 +78,11 @@
         {
           "when": "resourceLangId == json",
           "command": "frSchema.s2i",
+          "group": "1_formrender_translater"
+        },
+        {
+          "when": "resourceLangId == javascript || resourceLangId == typescript || resourceLangId == javascriptreact || resourceLangId == typescriptreact",
+          "command": "frSchema.c2i",
           "group": "1_formrender_translater"
         }
       ],
@@ -138,6 +148,7 @@
     "react": "^16.8.6",
     "react-docgen": "^5.3.0",
     "react-dom": "^16.8.6",
+    "shift-parser": "^7.0.3",
     "umi": "^3.2.22"
   },
   "devDependencies": {

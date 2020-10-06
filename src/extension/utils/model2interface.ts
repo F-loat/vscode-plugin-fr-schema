@@ -162,4 +162,6 @@ class Json2Interface {
   };
 }
 
-export default Json2Interface;
+const getInterfaceFromModel = new Json2Interface();
+
+export default getInterfaceFromModel;

@@ -3,9 +3,7 @@
  */
 
 import * as vscode from 'vscode';
-import { getModelFromSchema, Json2Interface } from './utils';
-
-const json2interface = new Json2Interface();
+import { getInterfaceFromModel, getModelFromSchema } from './utils';
 
 export class frSchema2InterfaceProvider {
   public static register(): vscode.Disposable {
@@ -27,9 +25,9 @@ export class frSchema2InterfaceProvider {
     try {
       const document = await vscode.workspace.openTextDocument(uri);
       const formSchema = JSON.parse(document.getText());
-      const schema = formSchema.schema || formSchema.propsSchema;
+      const schema = formSchema.schema || formSchema.propsSchema || formSchema;
       const formModel = getModelFromSchema(schema);
-      const formInterface = json2interface.convert(formModel, schema);
+      const formInterface = getInterfaceFromModel.convert(formModel, schema);
       vscode.env.clipboard.writeText(formInterface);
       vscode.window.setStatusBarMessage('类型定义已复制至剪贴板！', 3000);
     } catch (err) {
