@@ -26,7 +26,7 @@ const convert = (expression: any) => {
 };
 
 const getSchemaFromCode = (code: string) => {
-  const pureObject = code.replace(/^.*?=/, '').replace(/;$/, '').replace(/\?\./g, '.');
+  const pureObject = code.replace(/^[\s\S]*?=/, '').replace(/;$/, '').replace(/\?\./g, '.');
   const ast = parse(`(${pureObject})`);
   const result = convert(ast.statements[0].expression);
   return result;
