@@ -2,7 +2,7 @@
   "name": "vscode-plugin-fr-schema",
   "displayName": "FormRender generator",
   "description": "form-render 的表单设计器",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "publisher": "F-loat",
   "engines": {
     "vscode": "^1.46.0"
