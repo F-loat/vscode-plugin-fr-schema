@@ -23,13 +23,17 @@
   1. 点击右上角的 icon (推荐)
   2. 右键 `.json` 文件，选择 `可视化编辑表单配置` 或 `open with formRender schema editor`（英文编辑器）
 
+- 将 json schema 解析为 ts 类型定义的两种方式：
+
+  * 选中 js/ts 文件内的 schema 代码，右键选择 `解析所选对象为接口`
+   ![code2interface](https://img.alicdn.com/tfs/TB1sv2xlCR26e4jSZFEXXbwuXXa-1440-900.gif)
+
+  * 右键任意 `.json` 文件，选择 `解析表单配置为接口`
+   ![json2interface](https://img.alicdn.com/tfs/TB1nI.NWrY1gK0jSZTEXXXDQVXa-2736-1744.png)
+
 - 将 React PropTypes 解析为 schema。右键任意 `.jsx` 文件，选择 `解析组件为表单配置`，具体配置方式可查看 [proptypes-to-json-schema](https://github.com/form-render/proptypes-to-json-schema) 文档
 
    ![proptypes](https://img.alicdn.com/tfs/TB1Mt4Cicieb18jSZFvXXaI3FXa-2736-1744.png)
-
-- 将 schema 文件解析为 ts 类型定义。右键任意 `.json` 文件，选择 `解析表单配置为接口`
-
-   ![interface](https://img.alicdn.com/tfs/TB1nI.NWrY1gK0jSZTEXXXDQVXa-2736-1744.png)
 
 - 将表单数据转换为 schema。右键任意 `.json` 文件，选择 `转换数据为表单配置`
 
@@ -67,4 +71,4 @@ npm install
 
 - 调试插件
 
-使用 VSCode 打开项目，执行 `npm run dev`，然后按下 F5 开始调试
+使用 VSCode 打开项目，执行 `npm run dev:web`，然后按下 F5 开始调试
