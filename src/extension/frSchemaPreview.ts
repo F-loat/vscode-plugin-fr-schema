@@ -11,7 +11,7 @@ const initWebview = (editor: vscode.TextEditor, context: vscode.ExtensionContext
   const { document } = editor;
   const webviewPanel = vscode.window.createWebviewPanel(
     viewType,
-    `Preview ${document.fileName.replace(/.*\//, '')}`,
+    `Preview ${document.fileName.replace(/.*(\/|\\)/, '')}`,
     vscode.ViewColumn.Beside,
     {
       enableScripts: true,
