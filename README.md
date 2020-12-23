@@ -37,6 +37,10 @@
 
 - 将表单数据转换为 schema。右键任意 `.json` 文件，选择 `转换数据为表单配置`
 
+- 预览模式。可实时展示 `json` 文件改动效果
+
+   ![preview](https://img.alicdn.com/imgextra/i3/O1CN01BbcGi71vDFhN4cwcA_!!6000000006138-2-tps-2295-1224.png)
+
 ## 相关名词
 
 - FormRender
@@ -50,10 +54,6 @@
 - 接口
 
   用于 typescript 的类型定义
-
-- 表单数据
-
-  开发目标，表单的最终产出
 
 ## 参与插件开发
 
