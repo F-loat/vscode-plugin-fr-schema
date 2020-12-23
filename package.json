@@ -16,6 +16,7 @@
     "onCommand:frSchema.c2i",
     "onCommand:frSchema.gen",
     "onCommand:frSchema.edit",
+    "onCommand:frSchema.preview",
     "onCustomEditor:frSchema.editor"
   ],
   "repository": {
@@ -49,6 +50,11 @@
           "light": "./media/edit-light.svg",
           "dark": "./media/edit-dark.svg"
         }
+      },
+      {
+        "command": "frSchema.preview",
+        "title": "%frSchema.preview.title%",
+        "icon": "$(open-preview)"
       }
     ],
     "menus": {
@@ -56,6 +62,11 @@
         {
           "when": "resourceLangId == json",
           "command": "frSchema.edit",
+          "group": "navigation"
+        },
+        {
+          "when": "resourceLangId == json",
+          "command": "frSchema.preview",
           "group": "navigation"
         }
       ],
@@ -142,7 +153,7 @@
     "vscode:prepublish": "npm run lint && npm run build:web && npm run build:extension"
   },
   "dependencies": {
-    "fr-generator": "^1.0.0-beta.1",
+    "fr-generator": "^1.0.0",
     "lodash-es": "^4.17.15",
     "proptypes-to-json-schema": "^0.1.1",
     "react": "^16.8.6",

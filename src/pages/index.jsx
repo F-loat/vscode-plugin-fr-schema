@@ -4,6 +4,7 @@ import { vsemit, vson } from './utils';
 
 const App = () => {
   const generator = useRef(null);
+  const isPreview = window.mode === 'preview';
 
   const handleClose = () => {
     const schema = generator.current.getValue();
@@ -30,19 +31,21 @@ const App = () => {
   vsemit('init');
 
   return (
-    <Generator
-      ref={generator}
-      extraButtons={[
-        true,
-        false,
-        false,
-        false,
-        {
-          text: '保存',
-          onClick: handleClose,
-        }
-      ]}
-    />
+    <div className={isPreview && 'preview-mode'}>
+      <Generator
+        ref={generator}
+        extraButtons={[
+          true,
+          false,
+          false,
+          false,
+          !isPreview && {
+            text: '保存',
+            onClick: handleClose,
+          }
+        ]}
+      />
+    </div>
   );
 };
 

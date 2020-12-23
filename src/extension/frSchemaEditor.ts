@@ -3,6 +3,7 @@
  */
 
 import * as vscode from 'vscode';
+import { getHtmlForWebview } from './utils';
 
 export class frSchemaEditorProvider implements vscode.CustomTextEditorProvider {
   public static register(context: vscode.ExtensionContext): vscode.Disposable {
@@ -39,7 +40,7 @@ export class frSchemaEditorProvider implements vscode.CustomTextEditorProvider {
     webviewPanel.webview.options = {
       enableScripts: true,
     };
-    webviewPanel.webview.html = this.getHtmlForWebview(webviewPanel.webview);
+    webviewPanel.webview.html = getHtmlForWebview(webviewPanel.webview, this.context.extensionPath);
 
     function updateWebview() {
       webviewPanel.webview.postMessage({
@@ -92,32 +93,6 @@ export class frSchemaEditorProvider implements vscode.CustomTextEditorProvider {
           break;
       }
     });
-  }
-
-  /**
-   * Get the static html used for the editor webviews.
-   */
-  private getHtmlForWebview(webview: vscode.Webview): string {
-    const baseUri = `${webview.asWebviewUri(vscode.Uri.file(this.context.extensionPath))}/out/webview`;
-
-    return `
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <link rel="stylesheet" href="${baseUri}/umi.css">
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-          <title>FormRender generator</title>
-          <script>
-            window.routerBase = location.pathname.split('/').slice(0, -1).concat('').join('/');
-            window.publicPath = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + window.routerBase;
-          </script>
-        </head>
-        <body>
-          <div id="root"></div>
-          <script src="${baseUri}/umi.js"></script>
-        </body>
-      </html>`;
   }
 
   /**

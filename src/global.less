@@ -17,6 +17,14 @@ html, body, #root {
   display: none;
 }
 
+.preview-mode {
+  .left-layout,
+  .right-layout,
+  .field-wrapper > div[style] {
+    display: none !important;
+  }
+}
+
 // 容器类
 body,
 .fr-wrapper,
@@ -45,6 +53,7 @@ body,
 }
 
 // 按钮类
+.left-item,
 .left-element,
 .ant-btn,
 .field-wrapper > div[draggable],
